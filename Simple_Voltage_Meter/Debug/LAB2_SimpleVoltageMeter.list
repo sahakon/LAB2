@@ -941,7 +941,7 @@ int main(void)
  8000b4a:	e008      	b.n	8000b5e <main+0x76>
 			  }
 
-			  else
+			  else //Temperature
 			  {
 				  temperature = adcRawData[i]+temperature;
  8000b4c:	4b18      	ldr	r3, [pc, #96]	; (8000bb0 <main+0xc8>)
@@ -958,8 +958,7 @@ int main(void)
  8000b62:	dde4      	ble.n	8000b2e <main+0x46>
 			  }
 		  }
-
-		  voltage = ((voltage/10)*(3.3*1000/4096))*2;
+		  voltage = ((voltage/10)*(3.3*1000/4095))*2;
  8000b64:	4b15      	ldr	r3, [pc, #84]	; (8000bbc <main+0xd4>)
  8000b66:	881b      	ldrh	r3, [r3, #0]
  8000b68:	4a16      	ldr	r2, [pc, #88]	; (8000bc4 <main+0xdc>)
@@ -989,8 +988,8 @@ int main(void)
  8000ba4:	801a      	strh	r2, [r3, #0]
   {
  8000ba6:	e7b2      	b.n	8000b0e <main+0x26>
- 8000ba8:	00000000 	.word	0x00000000
- 8000bac:	3fe9c800 	.word	0x3fe9c800
+ 8000ba8:	99c99c9a 	.word	0x99c99c9a
+ 8000bac:	3fe9c99c 	.word	0x3fe9c99c
  8000bb0:	20000114 	.word	0x20000114
  8000bb4:	20000028 	.word	0x20000028
  8000bb8:	20000140 	.word	0x20000140

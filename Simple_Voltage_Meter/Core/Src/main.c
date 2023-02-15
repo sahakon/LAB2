@@ -119,13 +119,12 @@ int main(void)
 				  voltage = adcRawData[i]+voltage;
 			  }
 
-			  else
+			  else //Temperature
 			  {
 				  temperature = adcRawData[i]+temperature;
 			  }
 		  }
-
-		  voltage = ((voltage/10)*(3.3*1000/4096))*2;
+		  voltage = ((voltage/10)*(3.3*1000/4095))*2;
 //		  temperature = ((((110 - 30)*((temperature/10) - TS_CAL1))/(TS_CAL_2 - TS_CAL_1) ) + 30)+273.15;
 	  }
   }
